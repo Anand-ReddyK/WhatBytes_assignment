@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - Auth App{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Your Profile</h2>
+
+    <div class="space-y-4">
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-600"><strong>Username:</strong> {{ user.username }}</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-600"><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-600"><strong>Date Joined:</strong> {{ user.date_joined|date:"F j, Y" }}</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-600"><strong>Last Login:</strong> {{ user.last_login|date:"F j, Y H:i" }}</p>
+        </div>
+    </div>
+
+    <div class="mt-6">
+        <a href="{% url 'home' %}" class="inline-block bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            Back to Home
+        </a>
+    </div>
+</div>
+{% endblock %}

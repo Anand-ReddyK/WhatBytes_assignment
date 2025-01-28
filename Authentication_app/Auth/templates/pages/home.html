@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Auth App{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Hi, {{ user.username }}!</h2>
+    
+    <div class="space-y-4">
+        <!-- Profile Link -->
+        <a href="{% url 'profile' %}" class="block w-full bg-indigo-500 text-white text-center py-3 px-6 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            View Profile
+        </a>
+        
+        <!-- Change Password Link -->
+        <a href="{% url 'change_password' %}" class="block w-full bg-green-500 text-white text-center py-3 px-6 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+            Change Password
+        </a>
+    </div>
+</div>
+{% endblock %}
